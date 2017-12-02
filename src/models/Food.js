@@ -7,8 +7,8 @@ const FoodSchema = new Schema({
     type: String,
     required: true
   },
+  selectedNutritionalValues: NutritionValuesSchema,
   nutritionalValues: [NutritionValuesSchema],
-  selectedNutritionalValues: [NutritionValuesSchema],
   creationDate: { 
     type: Date, 
     default: Date.now 
