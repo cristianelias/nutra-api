@@ -19,4 +19,4 @@ app.use('/food', router);
 
 app.listen(PORT, () => {
   console.log(`${process.env.npm_package_name} listening on port ${PORT} 🚀`)
-});
+}); 
