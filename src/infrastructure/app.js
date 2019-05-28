@@ -8,7 +8,7 @@ import './db/db_config';
 import FoodController from '../adapters/controllers/food_controller';
 
 const app = express();
-const PORT = process.env.PORT || 7070;
+const PORT = process.env.PORT || 8080;
 
 app.use(cors);
 app.use(bodyParser.json());
