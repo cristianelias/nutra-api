@@ -1,6 +1,6 @@
-import mongoose, { Schema } from 'mongoose';
+import { Schema } from 'mongoose'
 
-export const NutritionValuesSchema = new Schema({
+const NutritionInfoSchema = new Schema({
   unit: {
     type: String,
     required: true
@@ -34,6 +34,6 @@ export const NutritionValuesSchema = new Schema({
 },
 {
   _id: false
-});
+}) 
 
-export const NutritionValueModel = mongoose.model('NutritionValue', NutritionValuesSchema);
+export default NutritionInfoSchema
