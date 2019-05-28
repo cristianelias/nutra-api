@@ -1,39 +1,39 @@
-import { Schema } from 'mongoose'
+import { Schema } from 'mongoose';
 
 const NutritionInfoSchema = new Schema({
   unit: {
     type: String,
-    required: true
+    required: true,
   },
   type: {
     type: String,
-    required: true
+    required: true,
   },
   quantity: {
     type: Number,
-    required: true
+    required: true,
   },
   nutrition: {
     kcal: {
       type: Number,
-      required: true
+      required: true,
     },
     proteins: {
       type: Number,
-      required: true
+      required: true,
     },
     carbs: {
       type: Number,
-      required: true
+      required: true,
     },
     fats: {
       type: Number,
-      required: true
+      required: true,
     },
-  }
+  },
 },
 {
-  _id: false
-}) 
+  _id: false,
+});
 
-export default NutritionInfoSchema
+export default NutritionInfoSchema;

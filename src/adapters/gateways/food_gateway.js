@@ -1,19 +1,19 @@
-import mongoose, { Schema } from 'mongoose' 
+import mongoose, { Schema } from 'mongoose';
 
-import NutritionInfoSchema from '../schemas/nutrition_info_schema'
+import NutritionInfoSchema from '../schemas/nutrition_info_schema';
 
 const FoodSchema = new Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   nutritionInfo: NutritionInfoSchema,
-  creationDate: { 
+  creationDate: {
     type: Date,
-    default: Date.now 
-  }
-}) 
+    default: Date.now,
+  },
+});
 
-const Food = mongoose.model('food', FoodSchema) 
+const Food = mongoose.model('food', FoodSchema);
 
-export default Food 
+export default Food;

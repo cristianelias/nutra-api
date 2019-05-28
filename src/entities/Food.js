@@ -6,17 +6,17 @@ class Food {
         name: foodData.name,
         nutritionInfo: foodData.nutritionInfo,
         creationDate: foodData.creationDate,
-      }
-    )
+      },
+    );
   }
 
   asJSON() {
     return {
       name: this.name,
       nutritionInfo: this.nutritionInfo,
-      creationDate: this.creationDate
-    }
+      creationDate: this.creationDate,
+    };
   }
 }
 
-export default Food
+export default Food;

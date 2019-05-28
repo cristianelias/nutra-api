@@ -5,9 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "babel ./src -d ./dist",
-    "dev": "nodemon src/infrastructure/app.js --exec babel-node",
     "build": "babel ./src -d ./dist",
-    "start:prod": "npm run build && nodemon dist/app.js"
+    "start:dev": "nodemon src/infrastructure/app.js --exec babel-node",
+    "start:prod": "npm run build && nodemon dist/app.js",
+    "lint:fix": "node_modules/eslint/bin/eslint.js --fix src"
   },
   "author": "",
   "license": "ISC",
@@ -22,5 +23,9 @@
     "morgan": "^1.9.1",
     "nodemon": "^1.19.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.17.3"
+  }
 }

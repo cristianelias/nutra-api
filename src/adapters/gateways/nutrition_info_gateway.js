@@ -1,4 +1,6 @@
-import mongoose from 'mongoose' 
-import NutritionInfoSchema from '../schemas/nutrition_info_schema'
+import mongoose from 'mongoose';
+import NutritionInfoSchema from '../schemas/nutrition_info_schema';
 
-export const NutritionInfoModel = mongoose.model('NutritionInfo', NutritionInfoSchema) 
+const NutritionInfoModel = mongoose.model('NutritionInfo', NutritionInfoSchema);
+
+export default NutritionInfoModel;
