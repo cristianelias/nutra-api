@@ -19,7 +19,8 @@ const foodController = new FoodController({
   gateway: new FoodGateway({ dbClient }),
 });
 
-app.get('/food', (req, res) => foodController.handle(req, res));
+app.get('/foods', (req, res) => foodController.searchFood(req, res));
+app.post('/foods', (req, res) => foodController.createFood(req, res));
 
 /* eslint-disable no-console */
 app.listen(PORT, () => {

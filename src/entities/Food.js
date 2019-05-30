@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 class Food {
   constructor(foodData) {
     Object.assign(
@@ -6,8 +7,13 @@ class Food {
         name: foodData.name,
         nutritionInfo: foodData.nutritionInfo,
         creationDate: foodData.creationDate,
+        _id: foodData._id,
       },
     );
+  }
+
+  setCreationDate(creationDate) {
+    this.creationDate = creationDate;
   }
 
   asJSON() {
@@ -15,6 +21,7 @@ class Food {
       name: this.name,
       nutritionInfo: this.nutritionInfo,
       creationDate: this.creationDate,
+      _id: this._id,
     };
   }
 }
