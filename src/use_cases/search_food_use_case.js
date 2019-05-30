@@ -4,31 +4,29 @@ class SearchFoodUseCase {
   constructor({
     req,
     res,
-    foodGateway,
+    gateway,
   }) {
     Object.assign(
       this,
       {
         req,
         res,
-        foodGateway,
+        gateway,
       },
     );
   }
 
   execute() {
-    const query = this.req.query.name;
+    const foodName = this.req.query.name;
 
-    if (!query) {
+    if (!foodName) {
       this.res.status(422).json({ message: 'Missing parameter [name] in request.' });
     }
 
-    this.foodGateway.find({
-      name: new RegExp(query, 'i'),
-    })
+    this.gateway.findByName({ name: new RegExp(foodName, 'i') })
       .then((foodsFromGateway) => {
         if (foodsFromGateway.length === 0) {
-          this.res.status(404).json({ message: `Unable to find a food matching ${query}` });
+          this.res.status(404).json({ message: `Unable to find a food matching ${foodName}` });
         } else {
           const foodList = foodsFromGateway.map(foodData => new Food(foodData));
           const serializedFood = foodList.map(food => food.asJSON());

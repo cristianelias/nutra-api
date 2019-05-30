@@ -1,19 +1,24 @@
-import mongoose, { Schema } from 'mongoose';
+class FoodGateway {
+  constructor({ dbClient }) {
+    Object.assign(
+      this,
+      {
+        dbClient,
+        dbName: 'nutra',
+        collection: 'foods',
+      },
+    );
+  }
 
-import NutritionInfoSchema from '../schemas/nutrition_info_schema';
+  findByName({ nameRegex }) {
+    return this.dbClient
+      .db(this.dbName)
+      .collection(this.collection)
+      .find({
+        nameRegex,
+      })
+      .toArray();
+  }
+}
 
-const FoodSchema = new Schema({
-  name: {
-    type: String,
-    required: true,
-  },
-  nutritionInfo: NutritionInfoSchema,
-  creationDate: {
-    type: Date,
-    default: Date.now,
-  },
-});
-
-const Food = mongoose.model('food', FoodSchema);
-
-export default Food;
+export default FoodGateway;

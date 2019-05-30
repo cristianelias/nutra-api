@@ -1,10 +1,11 @@
-import mongoose from 'mongoose';
-
-mongoose.Promise = Promise;
+import { MongoClient } from 'mongodb';
 
 const uri = process.env.NUTRA_MONGO_URI;
+const dbClient = new MongoClient(uri, { useNewUrlParser: true });
 
 /* eslint-disable no-console */
-mongoose.connect(uri, { useNewUrlParser: true })
+dbClient.connect()
   .then(() => console.log(`Successfully connected to ${uri}`))
   .catch(err => console.log(`It's been an error while trying to connect to the db. Log: ${err}`));
+
+export default dbClient;
