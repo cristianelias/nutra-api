@@ -1,4 +1,5 @@
-const requestLogger = (req, res, next) => {  
+/* eslint-disable no-console */
+const requestLogger = (req, res, next) => {
   console.log(`HTTP Method: /${req.method}`);
   console.log(`Time: ${Date.now()}`);
 
@@ -6,4 +7,3 @@ const requestLogger = (req, res, next) => {
 };
 
 export default requestLogger;
-
